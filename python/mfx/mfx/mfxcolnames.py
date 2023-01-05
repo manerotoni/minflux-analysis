@@ -13,7 +13,7 @@ EFO = 'efo'             # Effective frequency periphery (outliers with more than
 # Additional columns added to the data
 
 LTR = 'ltr'             # Coordinates registered by translation using reference beads throughout the sample
-LRE = 'lre'             # Coordinates registered by translation + rotation
+LRE = 'lre'             # Coordinates registered by translation + rotation DO NOT USE
 TIM_TID_MEAN = 'tim_tid_mean' # Average acquisition time for all localizations within a track
 CLS_TRACK = 'cls_track' # Cluster column for each tid
 CLS_MEAS = 'cls_meas'   # Cluster column for each measurement

@@ -2,20 +2,20 @@ from mfx.mfxdata import MfxData
 from mfx.processlocalizations import ProcessLocalizations
 import mfx.mfxcolnames as col
 import time
+t0 = time.time()
+loc_dir = 'C:/Users/apoliti/Desktop/mflux_zarr_tmp_storage/analysis/Multiwash/VGLUT1_VGLUT1/'
+glob_dir = 'Z:/siva_minflux/analysis/Multiwash/VGLUT1_VGLUT1/'
+mfx = MfxData('Z:/siva_minflux/data/Multiwash/VGLUT1_VGLUT1/220811_VGLUT1_ROI01_First.msr',
+              outdir_main=glob_dir, zarr_dir_main=loc_dir)
 
-# t0 = time.time()
-# loc_dir = 'C:/Users/apoliti/Desktop/mflux_zarr_tmp_storage/analysis/Multiwash/VGLUT1_VGLUT1/'
-# glob_dir = 'Z:/siva_minflux/analysis/Multiwash/VGLUT1_VGLUT1/'
-# mfx = MfxData('Z:/siva_minflux/data/Multiwash/VGLUT1_VGLUT1/220811_VGLUT1_ROI01_First.msr',
-#               outdir_main=glob_dir, zarr_dir_main=loc_dir)
-#
-# # Example of workaround for not merged msr file
-# mfx.zarrdir = {'220811_VGLUT1_P1': 'C:/Users/apoliti/Desktop/mflux_zarr_tmp_storage/analysis/Multiwash/VGLUT1_VGLUT1/220811_VGLUT1_ROI01/220811_VGLUT1_P1',
-#                '220811_VGLUT1_P2': 'C:/Users/apoliti/Desktop/mflux_zarr_tmp_storage/analysis/Multiwash/VGLUT1_VGLUT1/220811_VGLUT1_ROI01/220811_VGLUT1_P2'}
-# mfx.zarr_import()
-# mfx.set_valid_ref()
-# regis = mfx.get_ref_transform()
-# out_dic = mfx.align_to_ref()
+# Example of workaround for not merged msr file
+mfx.zarrdir = {'220811_VGLUT1_P1': 'C:/Users/apoliti/Desktop/mflux_zarr_tmp_storage/analysis/Multiwash/VGLUT1_VGLUT1/220811_VGLUT1_ROI01/220811_VGLUT1_P1',
+               '220811_VGLUT1_P2': 'C:/Users/apoliti/Desktop/mflux_zarr_tmp_storage/analysis/Multiwash/VGLUT1_VGLUT1/220811_VGLUT1_ROI01/220811_VGLUT1_P2'}
+mfx.zarr_import()
+
+mfx.set_valid_ref()
+regis = mfx.get_ref_transform()
+out_dic = mfx.align_to_ref()
 # mfx.show_ref_transform(regis[mfx.TRANS], rotate=None, save=False, show=True)
 
 
