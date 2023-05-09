@@ -46,6 +46,7 @@ Field itr is a struct with fields:
    -  take the last iteration, you get anyway a lot of counts. If you suddenly get a high readout there is something wrong. 
 - ecc  effective counts center (middle position of beampattern)
 - efo  like eco but frequency (Hz)
+   -  When setting the excitation power try to get a histogram that is slightly clipped on the left. If the histogram is too far on the right you are wasting photons because of too much power.  
 - efc  like ecc but frequency (Hz)
 - ext  beampattern diameter (scales with wavelength and with
   L in sequence)
