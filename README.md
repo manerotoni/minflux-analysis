@@ -34,11 +34,16 @@ invalid localization attempts.)
 
 Field itr is a struct with fields:
 
-- cfr  center frequency ratio (equals efc / efo)
+- cfr  center frequency ratio (equals efc / efo). 
+  -  Can be used to detect multiple emitters in a donut or wrong settings in 3D. 
+  -  For 2D the 3th iteration (0.8) is used for filtering. You can see in all values. Last iteration may not be very precise. Ideally not above > 0.8.
+  -  For 3D the iteration 6th is used for filtering. Check how well the donut is placed in 3D. It will only be checked in XY not in Z.    
 - dcr  detector channel ratio (ratio of Cy5 near to Cyr5 far
   detector counts - or the other way around)
 - dmz  deformable mirror z-position
 - eco  effective counts periphery (circumference of beampattern)
+   -  the counts measured on the 6th positions used to interpolate center. It measure 6th (3D 4 ring, 2 up down, in 2D 6 rings) time and then  mesurer cfr in the center (this takes time)
+   -  take the last iteration, you get anyway a lot of counts. If you suddenly get a high readout there is something wrong. 
 - ecc  effective counts center (middle position of beampattern)
 - efo  like eco but frequency (Hz)
 - efc  like ecc but frequency (Hz)
