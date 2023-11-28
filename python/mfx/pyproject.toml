@@ -2,3 +2,6 @@
 name = "mfx"
 version = "0.0.2"
 dependencies = ["matplotlib", "numpy", "scipy"]
+authors = [{name="Antonio Politi", email="antonio.politi@mpinat.mpg.de"},]
+description = "Tools to analyze minflux data"
+readme = "README.md"
