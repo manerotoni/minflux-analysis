@@ -352,6 +352,7 @@ class MfxData:
             # Translate to center for convenience, translate each track with the same function
             out_dic[label][col.LNC] = self.apply_ref_translate(register[self.TRANS],
                                                                out_dic[label][col.LNC], out_dic[label][col.TIM][0])
+
             out_dic[label][col.LOC] = self.apply_ref_translate(register[self.TRANS],
                                                                out_dic[label][col.LOC], out_dic[label][col.TIM][0])
             # Translate over time
